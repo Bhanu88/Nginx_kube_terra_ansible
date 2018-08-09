@@ -31,3 +31,11 @@ variable "amis" {
     ap-southeast-2 = "ami-cfe4b2b0"
   }
 }
+
+output "Master" {
+  value = "${aws_instance.Master.public_dns}"
+}
+
+output "Worker" {
+  value = "${aws_instance.Worker.public_dns}"
+}
