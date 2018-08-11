@@ -33,9 +33,9 @@ variable "amis" {
 }
 
 output "Master" {
-  value = "${aws_instance.Master.public_dns}"
+  value = "${aws_instance.Master.id}"
 }
 
 output "Worker" {
-  value = "${aws_instance.Worker.public_dns}"
+  value = "${aws_instance.Worker.id}"
 }
