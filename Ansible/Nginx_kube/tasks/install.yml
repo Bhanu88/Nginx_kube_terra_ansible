@@ -1,0 +1,3 @@
+---
+- name: Install docker Package
+  apt: name=docker.io update_cache=yes state=latest

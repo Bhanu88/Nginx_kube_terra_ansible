@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - /vagrant/GIT_REPOS/Nginx_kube_terra_ansible/Ansible/Nginx_kube

@@ -8,6 +8,7 @@ resource "aws_instance" "Master" {
   subnet_id                   = "${aws_subnet.public-subnet-in-us-east-1.id}"
   associate_public_ip_address = true
   source_dest_check           = false
+  user_data                   = "${file("userdata.sh")}"
 
   tags {
     Name = "KubeMaster"
@@ -24,6 +25,7 @@ resource "aws_instance" "Worker" {
   subnet_id                   = "${aws_subnet.public-subnet-in-us-east-1.id}"
   associate_public_ip_address = true
   source_dest_check           = false
+  user_data                   = "${file("userdata.sh")}"
 
   tags {
     Name = "KubeWorker"

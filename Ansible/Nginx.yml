@@ -1,0 +1,13 @@
+---
+- hosts: Master
+  sudo: yes
+  vars:
+    python:
+      Designer: 'Bhanu Pratap'
+      OS: 'Ubuntu'
+  roles:
+  - {role: Nginx_kube}
+  tasks:
+  - name: Ansible Dictionary Example
+    debug:
+      msg: "{{ python }}"

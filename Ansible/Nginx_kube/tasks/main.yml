@@ -1,0 +1,3 @@
+---
+# tasks file for /vagrant/GIT_REPOS/Nginx_kube_terra_ansible/Ansible/Nginx_kube
+- import_tasks: install.yml
