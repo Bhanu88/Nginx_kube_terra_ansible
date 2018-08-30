@@ -2,17 +2,19 @@
 
 if [ "$(. /etc/os-release; echo $NAME)" = "Ubuntu" ]; then
   apt-get update
-  apt-get -y install figlet docker.io git apt-transport-https curl python-minimal python-simplejson
-  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-  cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
-	deb http://apt.kubernetes.io/ kubernetes-xenial main
-EOF
-	apt-get update
-apt-get install -y kubelet kubeadm kubectl
-apt-mark hold kubelet kubeadm kubectl
-systemctl daemon-reload
-systemctl restart kubelet
-apt-get install -y python-minimal python-simplejson
+  apt-get -y install curl python-minimal python-simplejson
+  sudo cp /home/ubuntu/.ssh/authorized_keys /root/.ssh
+  #apt-get -y install figlet docker.io git apt-transport-https curl python-minimal python-simplejson
+  #curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+  #cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+	#deb http://apt.kubernetes.io/ kubernetes-xenial main
+#EOF
+	#apt-get update
+#apt-get install -y kubelet kubeadm kubectl
+#apt-mark hold kubelet kubeadm kubectl
+#systemctl daemon-reload
+#systemctl restart kubelet
+#apt-get install -y python-minimal python-simplejson
   SSH_USER=ubuntu
 else
   yum install epel-release -y

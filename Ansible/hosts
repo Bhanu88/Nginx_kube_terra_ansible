@@ -1,4 +1,0 @@
-[Master]
-ec2-35-168-33-171.compute-1.amazonaws.com ansible_ssh_user=ubuntu
-[Worker]
-ec2-35-172-145-123.compute-1.amazonaws.com ansible_ssh_user=ubuntu

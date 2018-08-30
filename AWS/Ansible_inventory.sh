@@ -9,8 +9,10 @@ while read domain ip
 do
 echo "[$domain]" | sed -e 's/^[ \t]*//'>>hosts
 pub=`aws ec2 describe-instances --instance-id $ip --query 'Reservations[].Instances[].PublicDnsName' --output text`
-echo "$pub ansible_ssh_user=ubuntu">>hosts
+echo "$pub ansible_ssh_user=root">>hosts
+cat ~/.ssh/id_rsa.pub | ssh -i ~/.ssh/bhanupr.pem -o StrictHostKeyChecking=no root@$pub 'cat >> .ssh/authorized_keys'
 cat ~/.ssh/id_rsa.pub | ssh -i ~/.ssh/bhanupr.pem -o StrictHostKeyChecking=no ubuntu@$pub 'cat >> .ssh/authorized_keys'
+
 done <"$file"
 cp -r hosts ../Ansible/
 rm hosts Ans.properties

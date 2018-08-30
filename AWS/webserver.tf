@@ -1,7 +1,7 @@
 resource "aws_instance" "Master" {
   ami                    = "${lookup(var.amis, var.region)}"
   availability_zone      = "us-east-1a"
-  instance_type          = "t2.micro"
+  instance_type          = "t2.medium"
   key_name               = "${var.key_name}"
   vpc_security_group_ids = ["${aws_security_group.web.id}"]
 
@@ -18,7 +18,7 @@ resource "aws_instance" "Master" {
 resource "aws_instance" "Worker" {
   ami                    = "${lookup(var.amis, var.region)}"
   availability_zone      = "us-east-1a"
-  instance_type          = "t2.micro"
+  instance_type          = "t2.medium"
   key_name               = "${var.key_name}"
   vpc_security_group_ids = ["${aws_security_group.web.id}"]
 
