@@ -11,7 +11,7 @@ pipeline {
             steps {
                 dir('Jenkinstest/AWS') {
             sh 'terraform init'
-            sh 'echo "yes" | terraform plan'
+            sh 'echo "yes" | terraform apply'
             sh 'sh Ansible_inventory.sh'
             
 }
