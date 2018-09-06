@@ -1,0 +1,4 @@
+[Master]
+ec2-18-214-202-228.compute-1.amazonaws.com ansible_ssh_user=root
+[Worker]
+ec2-35-168-168-33.compute-1.amazonaws.com ansible_ssh_user=root
